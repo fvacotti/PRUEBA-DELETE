@@ -4,26 +4,26 @@
 
 @font-face {
 	font-family: "Carbon";
-	src: url(fonts/carbon-bl.ttf);
+	src: url(../fonts/carbon-bl.ttf);
 }
 
 /* TEXTO */
 
 @font-face {
 	font-family: "Barlow R";
-	src: url(fonts/Barlow-Regular.ttf);
+	src: url(../fonts/Barlow-Regular.ttf);
 	font-weight: 400;
 }
 
 @font-face {
 	font-family: "Barlow B";
-	src: url(fonts/Barlow-ExtraBold.ttf);
+	src: url(../fonts/Barlow-ExtraBold.ttf);
 	font-weight: 900;
 }
 
 @font-face {
 	font-family: "Barlow I";
-	src: url(fonts/Barlow-Italic.ttf);
+	src: url(../fonts/Barlow-Italic.ttf);
 	font-weight: 400;
 }
 

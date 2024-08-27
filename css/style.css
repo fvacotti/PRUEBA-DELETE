@@ -389,7 +389,7 @@ footer .social li:hover {
 	height: 100%;
 	clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
 	border-radius: 0 100px 0 0;
-	background-image: url(img/pattern.svg);
+	background-image: url(../img/pattern.svg);
 	background-size: 220%;
 	background-position-y: top;
 	background-repeat: no-repeat;

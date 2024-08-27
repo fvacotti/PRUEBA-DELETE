@@ -1,0 +1,1196 @@
+/* ---------- TIPOGRAFÍAS ---------- */
+
+/* TÍTULOS */
+
+@font-face {
+	font-family: "Carbon";
+	src: url(fonts/carbon-bl.ttf);
+}
+
+/* TEXTO */
+
+@font-face {
+	font-family: "Barlow R";
+	src: url(fonts/Barlow-Regular.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Barlow B";
+	src: url(fonts/Barlow-ExtraBold.ttf);
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: "Barlow I";
+	src: url(fonts/Barlow-Italic.ttf);
+	font-weight: 400;
+}
+
+/* -------------------------------------------------- */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	font-family: "Barlow R";
+}
+
+/* ---------- VARIABLES ---------- */
+
+:root {
+	--base: #00262f;
+	--texto: #f6f6f6;
+	--titulos: #f20574;
+	--padding: 5vw;
+	--transition: 500ms ease-out;
+	--sizeTxt: 1.2rem;
+	--paddingSec: 20vh 10vw;
+	--widthTxt: 50%;
+}
+
+/* ---------- GENERAL ---------- */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--base);
+	padding-top: 70px;
+}
+
+/* TEXTO */
+
+h1 {
+	font-family: "Carbon";
+	font-size: 4.5rem;
+	line-height: 1;
+}
+
+h2 {
+	font-size: 4rem;
+	font-family: "Carbon";
+	color: var(--base);
+	padding-bottom: var(--padding);
+	line-height: 1;
+}
+
+h3 {
+	font-size: 1.8rem;
+	line-height: 1;
+	font-family: "Barlow B";
+	color: var(--titulos);
+}
+
+p {
+	font-size: var(--sizeTxt);
+	line-height: 1.2;
+	color: var(--texto);
+}
+
+a {
+	color: inherit;
+}
+
+span {
+	font-family: inherit;
+}
+
+.italic {
+	font-family: "Barlow I";
+}
+
+/* BOTONES */
+
+.button {
+	width: fit-content;
+	padding: 20px 25px;
+	background-color: var(--titulos);
+	border: none;
+	color: var(--texto);
+	transition: var(--transition);
+	border-radius: 0 0 30px 0;
+}
+
+.button a {
+	font-family: "Barlow R";
+	font-size: var(--sizeTxt);
+	padding: 20px 25px;
+}
+
+.button:hover {
+	filter: brightness(0.9);
+}
+
+/* BOTÓN P/ SUBIR */
+
+.btn-up {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--base);
+	color: var(--texto);
+	font-size: var(--sizeTxt);
+	position: fixed;
+	border-radius: 100%;
+	/* escondo el botón para después hacerlo aparecer con js */
+	right: -200px;
+	bottom: 30px;
+	transition: var(--transition);
+	cursor: pointer;
+}
+
+.btn-up:hover {
+	transform: scale(1.1);
+	background-color: var(--titulos);
+}
+
+/* LÍNEA */
+
+.line-pink {
+	height: 2px;
+	background-color: var(--texto);
+}
+
+.line-pink div {
+	background-color: var(--titulos);
+	margin: 0 10vw;
+	height: 100%;
+}
+
+/* ANIMACIONES */
+
+@keyframes blur {
+	0% {
+		filter: blur(1rem);
+	}
+
+	100% {
+		filter: blur(0);
+	}
+}
+
+@keyframes tracking {
+	0% {
+		letter-spacing: 10px;
+		opacity: 0;
+	}
+
+	40% {
+		opacity: 0.5;
+	}
+
+	100% {
+		letter-spacing: normal;
+		opacity: 1;
+	}
+}
+
+@keyframes rotate {
+	0% {
+		rotate: -1.5deg;
+	}
+
+	50% {
+		rotate: 1.5deg;
+	}
+
+	100% {
+		rotate: -1.5deg;
+	}
+}
+
+/* -------------------------------------------------- */
+
+/* ---------- HEADER ---------- */
+
+header {
+	position: fixed;
+	top: 0;
+	z-index: 5;
+	width: 100%;
+	height: 70px;
+	background-color: var(--base);
+	display: flex;
+	align-items: center;
+	padding: 0 10vw;
+	transition: var(--transition);
+}
+
+header nav {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* LOGO */
+
+header nav .logo img {
+	height: 30px;
+	transition: var(--transition);
+}
+
+header nav .logo img:hover {
+	transform: scale(1.1);
+}
+
+/* BOTONERA */
+
+header nav .nav-menu {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+header nav .nav-menu a {
+	color: var(--texto);
+	position: relative;
+}
+
+/* HOVER BOTONES */
+
+header nav .nav-menu a::after {
+	content: "";
+	position: absolute;
+	background-color: var(--texto);
+	right: 0;
+	top: calc(100% + 3px);
+	left: 0;
+	height: 1px;
+	width: 100%;
+	opacity: 0;
+	transition: var(--transition);
+}
+
+header nav .nav-menu a:hover::after {
+	opacity: 1;
+}
+
+/* MENÚ HAMBURGUESA */
+
+header nav .hamburger {
+	display: none;
+	cursor: pointer;
+	justify-content: flex-end;
+}
+
+header nav .hamburger .bar {
+	display: block;
+	width: 30px;
+	height: 1px;
+	margin: 7px auto;
+	transition: all 300ms ease-in-out;
+	background-color: var(--texto);
+}
+
+header nav .hamburger .bar:nth-child(1) {
+	margin-top: 0;
+}
+
+header nav .hamburger .bar:nth-child(3) {
+	margin-bottom: 0;
+}
+
+/* HEADER UNA VEZ SE HACE SCROLL */
+
+.abajo {
+	background-color: var(--titulos);
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+	color: var(--texto);
+	font-size: 2rem;
+	transition: var(--transition);
+	display: flex;
+	justify-content: space-between;
+	padding: 10vh 10vw;
+}
+
+footer .txt {
+	font-size: 1rem;
+}
+
+footer .txt li {
+	padding-bottom: 10px;
+	transition: var(--transition);
+}
+
+footer .txt li:hover {
+	color: var(--titulos);
+}
+
+footer .logo img {
+	height: 80px;
+}
+
+footer .social {
+	background-color: var(--base);
+	display: flex;
+	align-items: flex-start;
+	gap: 40px;
+}
+
+footer .social li {
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+footer .social li:hover {
+	color: var(--titulos);
+}
+
+/* ---------- HOME ---------- */
+
+#home {
+	background-color: var(--base);
+	height: calc(100vh - 70px);
+	color: var(--texto);
+	padding: 10vh 10vw;
+	display: flex;
+	gap: 40px;
+}
+
+/* BIENVENIDA */
+
+#home .title {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+#home .title h3 {
+	color: var(--texto);
+	padding-bottom: inherit;
+}
+
+#home .title h3 span {
+	font-family: "Barlow B";
+	color: var(--titulos);
+}
+
+#home .naming {
+	color: var(--titulos);
+	animation: tracking 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+/* IMAGEN */
+
+#home .img {
+	width: 50%;
+	height: 100%;
+	clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+	border-radius: 0 100px 0 0;
+	background-image: url(img/pattern.svg);
+	background-size: 220%;
+	background-position-y: top;
+	background-repeat: no-repeat;
+	opacity: 0.8;
+	mask-image: linear-gradient(black 0%, transparent 90%);
+	animation: blur 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* ---------- CÓMO COMENZAR ---------- */
+
+#start {
+	background-color: var(--base);
+	height: 100vh;
+	padding: var(--paddingSec);
+	display: flex;
+	align-items: center;
+}
+
+/* TEXTO */
+
+#start .txt {
+	width: 50%;
+}
+
+#start .txt h2 {
+	color: var(--texto);
+	padding-bottom: 2rem;
+}
+
+#start .txt h2 span {
+	color: var(--titulos);
+}
+
+/* FORMULARIO */
+
+#start .form-start {
+	width: 50%;
+}
+
+/* ---------- SOBRE NOSOTROS ---------- */
+
+#about {
+	background-color: var(--texto);
+	padding: var(--paddingSec);
+	display: flex;
+	position: relative;
+}
+
+/* TEXTO */
+
+#about h2 span {
+	color: var(--titulos);
+}
+
+#about p {
+	width: var(--widthTxt);
+	color: var(--base);
+	margin-bottom: var(--padding);
+}
+
+/* REDES */
+
+#about .social {
+	position: absolute;
+	top: 20vh;
+	right: 10vw;
+	font-size: 2rem;
+	color: var(--texto);
+}
+
+#about .social ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	background-color: var(--base);
+	padding: 20px;
+}
+
+#about .social ul li {
+	transition: var(--transition);
+}
+
+#about .social ul li:hover {
+	color: var(--titulos);
+}
+
+/* ---------- MÉTODO ---------- */
+
+#method {
+	padding: var(--paddingSec);
+	background-color: var(--texto);
+}
+
+/* TEXTO */
+
+#method {
+	position: relative;
+}
+
+#method .txt {
+	width: var(--widthTxt);
+}
+
+#method h2 span {
+	color: var(--titulos);
+}
+
+#method p {
+	color: var(--base);
+}
+
+/* REDES */
+
+#method .social {
+	position: absolute;
+	top: 20vh;
+	right: 10vw;
+	font-size: 2rem;
+	color: var(--texto);
+}
+
+#method .social ul {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#method .social ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	background-color: var(--base);
+	padding: 20px;
+}
+
+#method .social ul li {
+	transition: var(--transition);
+}
+
+#method .social ul li:hover {
+	color: var(--titulos);
+}
+
+/* CONTENT */
+
+#method .container {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--padding);
+	margin: 10vw auto;
+}
+
+#method .container:last-child {
+	margin-bottom: 0;
+}
+
+/* CARDS */
+
+#method .container .card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+	padding: var(--padding);
+	border: solid 2px var(--base);
+	border-radius: 0 0 50px 0;
+	transition: var(--transition);
+}
+
+#method .container .card:hover {
+	transform: scale(1.025);
+}
+
+/* ÍCONO */
+
+#method .container .card i {
+	color: var(--titulos);
+	font-size: 3rem;
+}
+
+/* TXT */
+
+#method .container .card h3 {
+	color: var(--base);
+}
+
+#method .container .card p {
+	text-align: center;
+}
+
+/* ---------- CÓMO FUNCIONA ---------- */
+
+#how {
+	background-color: var(--base);
+	padding: var(--paddingSec);
+}
+
+/* TEXTO */
+
+#how h2 {
+	color: var(--titulos);
+	padding-bottom: 120px;
+}
+
+#how h2 span {
+	color: var(--texto);
+	position: relative;
+}
+
+#how .txt {
+	width: var(--widthTxt);
+}
+
+#how .txt h3 {
+	padding-bottom: 30px;
+}
+
+#how .txt p {
+	font-size: 1.5rem;
+}
+
+/* CARDS */
+
+#how .container {
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
+	padding: 0 5vw;
+}
+
+#how .container .card {
+	display: flex;
+	gap: 50px;
+	align-items: center;
+}
+
+/* IMÁGENES CARDS */
+
+#how .img {
+	width: 50%;
+	min-height: 350px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#how .img img {
+	mask-image: linear-gradient(180deg, black 50%, transparent);
+	max-height: 350px;
+	transition: var(--transition);
+	animation: rotate 4s infinite;
+}
+
+/* ---------- RESULTADOS ---------- */
+
+#results {
+	height: 100vh;
+	padding: var(--paddingSec);
+	background-color: var(--texto);
+	display: flex;
+	align-items: center;
+	gap: 120px;
+}
+
+/* TEXTO */
+
+#results .txt {
+	width: 45%;
+}
+
+#results .txt span {
+	color: var(--titulos);
+}
+
+#results .txt p {
+	color: var(--base);
+	margin-bottom: 40px;
+}
+
+/* IMAGEN */
+
+#results .graph {
+	width: 55%;
+}
+
+/* ----------TESTIMONIOS ---------- */
+
+#testimonios {
+	background-color: var(--base);
+	padding: var(--paddingSec);
+}
+
+#testimonios h2 {
+	color: var(--texto);
+	padding: 0;
+}
+
+#testimonios h2 span {
+	color: var(--titulos);
+}
+
+#testimonios .container {
+	display: flex;
+	gap: 120px;
+	padding-top: 10vw;
+}
+
+#testimonios .container .card {
+	width: 50%;
+	border: solid 2px var(--titulos);
+	padding: 60px;
+	min-height: 350px;
+	display: flex;
+	gap: 40px;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 0 0 50px 0;
+}
+
+#testimonios .container .card i {
+	font-size: 3rem;
+	color: var(--titulos);
+	text-align: center;
+}
+
+#testimonios .container .card p {
+	font-family: "Barlow I";
+	font-size: 1.5rem;
+	line-height: 1.5;
+	text-align: center;
+}
+
+#testimonios .container .card span {
+	color: var(--titulos);
+	font-size: 1rem;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* ---------- POR QUÉ INVERTIR ---------- */
+
+#why {
+	height: 100vh;
+	background-color: var(--texto);
+	padding: var(--paddingSec);
+}
+
+#why .container {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#why .container h2 span {
+	color: var(--titulos);
+}
+
+#why .container p {
+	color: var(--base);
+}
+
+/* -------------------------------------------------- */
+
+/* ---------- PREGUNTAS FRECUENTES ---------- */
+
+#faqs {
+	padding: 10vh 10vw 20vh;
+	background-color: var(--texto);
+}
+
+#faqs h2 {
+	animation: tracking 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+#faqs h2 span {
+	color: var(--titulos);
+}
+
+#faqs .faq {
+	margin-bottom: 40px;
+}
+
+#faqs .faq h3 {
+	margin-bottom: 20px;
+}
+
+#faqs .faq p {
+	color: var(--base);
+	width: var(--widthTxt);
+}
+
+/* REDES */
+
+#faqs .social ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	background-color: var(--base);
+	padding: 20px;
+}
+
+#faqs .social {
+	position: absolute;
+	top: calc(10vh + 70px);
+	right: 10vw;
+	font-size: 2rem;
+	color: var(--texto);
+	cursor: pointer;
+}
+
+#faqs .social ul li {
+	transition: var(--transition);
+}
+
+#faqs .social ul li:hover {
+	color: var(--titulos);
+}
+
+/* -------------------------------------------------- */
+
+/* ---------- RESPONSIVE ---------- */
+
+/* ---------- TABLET HORIZONTAL ---------- */
+
+@media (max-width: 1024px) {
+
+	/* ---------- VARIABLES ---------- */
+
+	:root {
+		--widthTxt: 80%;
+	}
+
+	/* ---------- HEADER ---------- */
+
+	/* MENÚ HAMBURGUESA */
+
+	header nav .hamburger {
+		display: block;
+	}
+
+	header nav .hamburger.active .bar:nth-child(2) {
+		opacity: 0;
+	}
+
+	header nav .hamburger.active .bar:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	header nav .hamburger.active .bar:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	/* BOTONERA RESPONSIVE */
+
+	header nav .nav-menu {
+		position: fixed;
+		left: -100%;
+		top: 70px;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: 30px;
+		background-color: var(--base);
+		width: 100%;
+		transition: 600ms;
+		height: 100vh;
+		padding: 5vh 10vw;
+	}
+
+	header nav .nav-menu.active {
+		left: 0;
+	}
+
+	header nav {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+	}
+
+	/* ---------- MÉTODO ---------- */
+
+	#method .container {
+		width: 80%;
+	}
+
+	/* ---------- CÓMO FUNCIONA ---------- */
+
+	#how .container {
+		gap: 20px;
+	}
+
+	/* ---------- RESULTADOS ---------- */
+
+	#results {
+		height: fit-content;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	/* TEXTO */
+
+	#results .txt {
+		width: var(--widthTxt);
+	}
+
+	#results .txt span {
+		color: var(--titulos);
+	}
+
+	#results .txt p {
+		color: var(--base);
+		margin-bottom: 40px;
+	}
+
+	/* IMAGEN */
+
+	#results .graph {
+		width: 100%;
+	}
+
+	/* ---------- TESTIMONIOS ---------- */
+
+	#testimonios .container {
+		gap: 40px;
+	}
+
+	/* ---------- POR QUÉ INVERTIR ---------- */
+
+	#why .container {
+		width: 80%;
+	}
+}
+
+/* ---------- TABLET VERTICAL ---------- */
+
+@media (max-width: 768px) {
+
+	/* ---------- VARIABLES ---------- */
+
+	:root {
+		--padding: 10vw;
+	}
+
+	/* ---------- FOOTER ---------- */
+
+	footer .logo {
+		display: none;
+	}
+
+	/* ---------- HOME ---------- */
+
+	#home .title {
+		width: 100%;
+	}
+
+	#home .img {
+		display: none;
+	}
+
+	/* ---------- CÓMO COMENZAR ---------- */
+
+	#start {
+		flex-direction: column;
+		height: fit-content;
+		gap: var(--padding);
+	}
+
+	/* TEXTO */
+
+	#start .txt {
+		width: 100%;
+	}
+
+	/* FORMULARIO */
+
+	#start .form-start {
+		width: 100%;
+	}
+
+	/* ---------- SOBRE NOSOTROS ---------- */
+
+	/* REDES */
+
+	#about .social {
+		position: inherit;
+		margin-top: var(--padding);
+		font-size: 1.5rem;
+	}
+
+	#about .social ul {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	/* ---------- MÉTODO ---------- */
+
+	/* REDES */
+
+	#method .social {
+		display: none;
+	}
+
+	/* ---------- CÓMO FUNCIONA ---------- */
+
+	#how h2 {
+		padding-bottom: var(--padding);
+	}
+
+	/* ---------- TESTIMONIOS ---------- */
+
+	#testimonios .container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#testimonios .container .card {
+		width: 80%;
+	}
+
+	/* ---------- POR QUÉ INVERTIR ---------- */
+
+	#why {
+		height: fit-content;
+	}
+}
+
+/* ---------- MÓVILES ---------- */
+
+@media (max-width: 450px) {
+
+	/* ---------- VARIABLES ---------- */
+
+	:root {
+		--padding: 10vh;
+		--sizeTxt: 1rem;
+		--paddingSec: 15vh 10vw;
+		--widthTxt: 100%;
+	}
+
+	/* ---------- GENERAL ---------- */
+
+	/* TEXTO */
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+	}
+
+	/* BOTONES */
+
+	.button {
+		width: 100%;
+	}
+
+	/* ---------- HEADER ---------- */
+
+	/* BOTONERA */
+
+	header nav .logo img:hover {
+		transform: none;
+	}
+
+	/* ---------- FOOTER ---------- */
+
+	footer {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--padding);
+	}
+
+	footer .logo {
+		display: block;
+	}
+
+	footer .social {
+		font-size: 1.5rem;
+		gap: 20px;
+	}
+
+	/* ---------- HOME ---------- */
+
+	/* BIENVENIDA */
+
+	#home .naming {
+		animation: blur 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	}
+
+	/* ---------- MÉTODO ---------- */
+
+	/* CONTENT */
+
+	#method .container {
+		width: 100%;
+		margin: 10vh 0 0 0;
+	}
+
+	/* CARDS */
+
+	#method .container .card {
+		padding: 30px;
+	}
+
+	#method .container .card:hover {
+		transform: none;
+	}
+
+	/* ÍCONO */
+
+	#method .container .card i {
+		font-size: 2rem;
+	}
+
+	/* ---------- CÓMO FUNCIONA ---------- */
+
+	/* CARDS */
+
+	#how .container {
+		gap: 80px;
+		padding: 0;
+		text-align: center;
+	}
+
+	#how .container .card {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	#how .container .card.second {
+		flex-direction: column-reverse;
+	}
+
+	/* IMÁGENES CARDS */
+
+	#how .img {
+		width: 70%;
+		min-height: 150px;
+	}
+
+	#how .txt p {
+		font-size: 1rem;
+	}
+
+	/* ---------- RESULTADOS ---------- */
+
+	#results {
+		gap: 0;
+	}
+
+	/* TEXTO */
+
+	#testimonios h2 {
+		padding-bottom: var(--padding);
+	}
+
+	/* TESTIMONIOS */
+
+	#testimonios .container {
+		padding-top: 0;
+	}
+
+	#testimonios .container .card {
+		width: 100%;
+		padding: 30px;
+		gap: 30px;
+		min-height: 0;
+	}
+
+	#testimonios .container .card i {
+		font-size: 2rem;
+	}
+
+	#testimonios .container .card p {
+		font-size: var(--sizeTxt);
+		line-height: 1.2;
+	}
+
+	/* ---------- POR QUÉ INVERTIR ---------- */
+
+	#why .container {
+		width: 100%;
+	}
+
+	/* -------------------------------------------------- */
+
+	/* ---------- PREGUNTAS FRECUENTES ---------- */
+
+	/* REDES */
+
+	#faqs .social {
+		display: none;
+	}
+}

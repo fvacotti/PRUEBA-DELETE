@@ -1130,7 +1130,7 @@ footer .social li:hover {
 	}
 
 	#home .naming {
-		animation: blur 100ms cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+		animation: blur 1000ms cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 	}
 
 	#home .img-mobile {

@@ -720,7 +720,7 @@ footer .social li:hover {
 #testimonios .container {
 	display: flex;
 	gap: 120px;
-	padding-top: 10vw;
+	padding-top: var(--padding);
 }
 
 #testimonios .container .card {
@@ -733,6 +733,7 @@ footer .social li:hover {
 	flex-direction: column;
 	justify-content: space-between;
 	border-radius: 0 0 50px 0;
+	transition: var(--transition);
 }
 
 #testimonios .container .card i {
@@ -750,9 +751,16 @@ footer .social li:hover {
 
 #testimonios .container .card span {
 	color: var(--titulos);
+	font-family: "Barlow B";
 	font-size: 1rem;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+/* HOVERS */
+
+#testimonios .container .card:hover {
+	transform: scale(1.025);
 }
 
 /* ---------- POR QUÉ INVERTIR ---------- */
@@ -1223,6 +1231,12 @@ footer .social li:hover {
 	#testimonios .container .card p {
 		font-size: var(--sizeTxt);
 		line-height: 1.2;
+	}
+
+	/* HOVERS */
+
+	#testimonios .container .card:hover {
+		transform: none;
 	}
 
 	/* ---------- POR QUÉ INVERTIR ---------- */

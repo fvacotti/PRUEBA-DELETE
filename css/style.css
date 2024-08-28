@@ -414,7 +414,7 @@ footer .social li:hover {
 	background-repeat: no-repeat;
 	opacity: 0.8;
 	mask-image: linear-gradient(black 0%, transparent 90%);
-	animation: blur 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: blur 1000ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 #home .img-mobile {
@@ -505,16 +505,14 @@ footer .social li:hover {
 #method {
 	padding: var(--paddingSec);
 	background-color: var(--texto);
+	position: relative;
 }
 
 /* TEXTO */
 
-#method {
-	position: relative;
-}
-
 #method .txt {
 	width: var(--widthTxt);
+	padding-bottom: var(--padding);
 }
 
 #method h2 span {
@@ -565,7 +563,7 @@ footer .social li:hover {
 	display: flex;
 	flex-direction: column;
 	gap: var(--padding);
-	margin: 10vw auto;
+	margin: 0 auto;
 }
 
 #method .container:last-child {
@@ -761,6 +759,38 @@ footer .social li:hover {
 
 #testimonios .container .card:hover {
 	transform: scale(1.025);
+}
+
+/* ---------- EBOOK ---------- */
+
+#ebook {
+	background-color: var(--base);
+	padding: var(--paddingSec);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--padding);
+}
+
+/* TEXTO */
+
+#ebook .txt {
+	width: 50%;
+}
+
+#ebook .txt h2 {
+	color: var(--texto);
+	font-size: 3rem;
+}
+
+#ebook .txt h2 span {
+	color: var(--titulos);
+}
+
+/* FORMULARIO */
+
+#ebook .form-ebook {
+	width: 50%;
 }
 
 /* ---------- POR QUÉ INVERTIR ---------- */
@@ -985,6 +1015,10 @@ footer .social li:hover {
 
 	/* ---------- HOME ---------- */
 
+	#home {
+		position: relative;
+	}
+
 	#home .title {
 		width: 100%;
 	}
@@ -1042,6 +1076,12 @@ footer .social li:hover {
 		padding-bottom: var(--padding);
 	}
 
+	/* RESULTADOS */
+
+	#results {
+		gap: var(--padding);
+	}
+
 	/* ---------- TESTIMONIOS ---------- */
 
 	#testimonios .container {
@@ -1051,6 +1091,29 @@ footer .social li:hover {
 
 	#testimonios .container .card {
 		width: 80%;
+	}
+
+	/* EBOOK */
+
+	#ebook {
+		height: fit-content;
+		gap: 2rem;
+	}
+
+	/* TEXTO */
+
+	#ebook .txt {
+		width: 100%;
+	}
+
+	#ebook .txt h2 {
+		padding-bottom: 2rem;
+	}
+
+	/* FORMULARIO */
+
+	#ebook .form-ebook {
+		width: 100%;
 	}
 
 	/* ---------- POR QUÉ INVERTIR ---------- */
@@ -1148,7 +1211,6 @@ footer .social li:hover {
 
 	#method .container {
 		width: 100%;
-		margin: 10vh 0 0 0;
 	}
 
 	/* CARDS */
@@ -1239,6 +1301,12 @@ footer .social li:hover {
 		transform: none;
 	}
 
+	/* EBOOK */
+
+	#ebook .txt h2 {
+		font-size: 2.5rem;
+	}
+
 	/* ---------- POR QUÉ INVERTIR ---------- */
 
 	#why .container {
@@ -1250,6 +1318,10 @@ footer .social li:hover {
 	/* ---------- PREGUNTAS FRECUENTES ---------- */
 
 	/* REDES */
+
+	#faqs {
+		padding: 10vh 10vw 15vh;
+	}
 
 	#faqs .social {
 		display: none;

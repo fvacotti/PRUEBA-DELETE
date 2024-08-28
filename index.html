@@ -11,7 +11,8 @@
 	<!-- ESTILOS GENERALES -->
 	<link rel="stylesheet" href="./css/style.css">
 	<!-- ESTILOS DEL SCRIPT CORREO -->
-	<link rel="stylesheet" href="./css/form.css">
+	<link rel="stylesheet" href="./css/form-newsletter.css">
+	<link rel="stylesheet" href="./css/form-ebook.css">
 
 	<!-- SCRIPTS EXTERNOS -->
 	<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
@@ -32,6 +33,7 @@
 				<li><a href="#method" class="nav-link">Nuestro método</a></li>
 				<li><a href="#results" class="nav-link">Resultados comprobados</a></li>
 				<li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+				<li><a href="#ebook" class="nav-link">eBook</a></li>
 			</ul>
 			<div class="hamburger">
 				<span class="bar"></span>
@@ -76,28 +78,25 @@
 			</div>
 			<div class="form-start">
 				<!-- FORMULARIO CORREO -->
-				<form action="https://app.convertkit.com/forms/6966343/subscriptions" class="seva-form formkit-form"
-					method="post" data-sv-form="6966343" data-uid="484ce773ff" data-format="inline" data-version="5"
+				<form action="https://app.convertkit.com/forms/7022365/subscriptions" class="seva-form formkit-form"
+					method="post" data-sv-form="7022365" data-uid="e141a4deb2" data-format="inline" data-version="5"
 					data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
 					<div data-style="full">
 						<div data-element="column" class="formkit-column">
 							<ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
 							<div data-element="fields" class="seva-fields formkit-fields">
-								<div class="formkit-field">
-									<input class="formkit-input" name="email_address" aria-label="Email Address"
-										placeholder="Correo electrónico" required="" type="email"
-										style="
-										font-size: var(--sizeTxt); 
-										background-color: var(--base); 
-										color: var(--texto); 
-										border: 1px solid var(--titulos);">
-								</div>
-								<button data-element="submit" class="formkit-submit formkit-submit"
-									style="
+								<div class="formkit-field"><input class="formkit-input" name="email_address"
+										aria-label="Email Address" placeholder="Correo electrónico" required=""
+										type="email" style="
 									font-size: var(--sizeTxt); 
+									background-color: var(--base); 
 									color: var(--texto); 
-									background-color: var(--titulos); 
-									border-radius: 0 0 25px 0;">
+									border: 1px solid var(--titulos);">
+								</div><button data-element="submit" class="formkit-submit formkit-submit" style="
+								font-size: var(--sizeTxt); 
+								color: var(--texto); 
+								background-color: var(--titulos); 
+								border-radius: 0 0 25px 0;">
 									<div class="formkit-spinner">
 										<div></div>
 										<div></div>
@@ -105,13 +104,11 @@
 									</div><span class="">Suscribite</span>
 								</button>
 							</div>
-							<div class="formkit-guarantee" data-element="guarantee"
-								style="
-								color: var(--texto); 
-								font-size: 0.8rem; 
-								text-align: center;">
-								Respetamos tu privacidad. Puedes cancelar la suscripción en cualquier momento.
-							</div>
+							<div class="formkit-guarantee" data-element="guarantee" style="
+							color: var(--texto); 
+							font-size: 0.8rem; 
+							text-align: center;">
+								Respetamos tu privacidad. Puedes cancelar la suscripción en cualquier momento.</div>
 							<div class="formkit-powered-by-convertkit-container"><a
 									href="https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"
 									data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark"
@@ -207,7 +204,7 @@
 			<h2><span>Tu dinero<br>
 				</span>merece estrategia<span><br>
 					y no azar</span></h2>
-					<div class="container">
+			<div class="container">
 				<!-- CARDS -->
 				<div class="card">
 					<div class="img">
@@ -281,6 +278,61 @@
 						resultados."</p>
 					<span>María T. <br> Miembro VIP</span>
 				</div>
+			</div>
+		</section>
+
+		<!-- EBOOK -->
+
+		<section id="ebook">
+			<div class="txt">
+				<h2><span>Inversiones inteligentes en apuestas deportivas:</span><br> Guía completa para maximizar tus
+					ganancias.</h2>
+				<p>
+					Descubre nuestras estrategias y consejos para apostar con éxito. <br><br>
+					Aprende a identificar apuestas de valor, gestionar tu bankroll y utilizar herramientas de análisis
+					para maximizar tus ganancias.</p>
+			</div>
+			<div class="form-ebook">
+				<!-- FORMULARIO CORREO -->
+				<form action="https://app.convertkit.com/forms/6966343/subscriptions" class="seva-form formkit-form"
+					method="post" data-sv-form="6966343" data-uid="484ce773ff" data-format="inline" data-version="5"
+					data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
+					<div data-style="full">
+						<div data-element="column" class="formkit-column">
+							<ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+							<div data-element="fields" class="seva-fields formkit-fields">
+								<div class="formkit-field"><input class="formkit-input" name="email_address"
+										aria-label="Email Address" placeholder="Correo electrónico" required=""
+										type="email" style="
+										font-size: var(--sizeTxt); 
+										background-color: var(--base); 
+										color: var(--texto); 
+										border: 1px solid var(--titulos);">
+								</div><button data-element="submit" class="formkit-submit formkit-submit" style="
+									font-size: var(--sizeTxt); 
+									color: var(--texto); 
+									background-color: var(--titulos); 
+									border-radius: 0 0 25px 0;">
+									<div class="formkit-spinner">
+										<div></div>
+										<div></div>
+										<div></div>
+									</div><span class="">Descargar eBook</span>
+								</button>
+							</div>
+							<div class="formkit-guarantee" data-element="guarantee" style="
+								color: var(--texto); 
+								font-size: 0.8rem; 
+								text-align: center;">
+								Respetamos tu privacidad. Puedes cancelar la suscripción en cualquier momento.
+							</div>
+							<div class="formkit-powered-by-convertkit-container"><a
+									href="https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"
+									data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark"
+									target="_blank" rel="nofollow">Built with ConvertKit</a></div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</section>
 

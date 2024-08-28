@@ -211,7 +211,7 @@ span {
 	}
 
 	50% {
-		transform: scale(1.05);
+		transform: scale(1.1);
 	}
 
 	100% {
@@ -1119,7 +1119,6 @@ footer .social li:hover {
 
 	#home {
 		flex-direction: column;
-		justify-content: space-between;
 	}
 
 	#home .naming {
@@ -1148,6 +1147,7 @@ footer .social li:hover {
 
 	#method .container .card {
 		padding: 30px;
+		border: solid 1px var(--base);
 	}
 
 	#method .container .card:hover {
@@ -1213,6 +1213,7 @@ footer .social li:hover {
 		padding: 30px;
 		gap: 30px;
 		min-height: 0;
+		border: solid 1px var(--titulos);
 	}
 
 	#testimonios .container .card i {
